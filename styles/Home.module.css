@@ -45,7 +45,6 @@
 .title a:active {
   text-decoration: underline;
 }
-
 .title {
   margin: 0;
   line-height: 1.15;
@@ -119,4 +118,7 @@
     width: 100%;
     flex-direction: column;
   }
+}
+.myP {
+  background-color: blue;
 }
