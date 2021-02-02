@@ -1,9 +1,12 @@
-//import styles from "../styles/Layouts.module.css";
+import styles from "../styles/Layouts.module.css";
+import Footer from "./footer";
+import Nav from "./nav";
 export default function CustomLayout({ children }) {
   return (
-    <div>
+    <div className={styles.container}>
+      <Nav />
       {children}
-      <h1>Rendered with the custom layout</h1>{" "}
+      <Footer />
     </div>
   );
 }

@@ -4,7 +4,7 @@ function DerivedLayout() {
   return (
     <>
       <CustomLayout>
-        <p>Hello there! I'm from Derived Layout</p>
+        <p>Gaming</p>
       </CustomLayout>
     </>
   );
