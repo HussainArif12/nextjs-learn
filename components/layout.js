@@ -3,10 +3,9 @@ import Footer from "./footer";
 import Nav from "./nav";
 export default function CustomLayout({ children }) {
   return (
-    <div className={styles.container}>
+    <>
       <Nav />
-      {children}
-      <Footer />
-    </div>
+      <div className={styles.container}>{children}</div>
+    </>
   );
 }
