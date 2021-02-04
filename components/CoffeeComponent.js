@@ -4,7 +4,7 @@ const CoffeeComponent = ({ coffee }) => {
   return (
     <>
       <Link href="/coffee/[id]" as={`/coffee/${coffee.id}`}>
-        <p>{coffee.title}</p>
+        <a>{coffee.title}</a>
       </Link>
     </>
   );

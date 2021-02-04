@@ -1,20 +1,21 @@
 import { useRouter } from "next/router";
-import CustomLayout from "../../components/layout";
+import Head from "next/head";
+import CustomLayout from "../../../components/layout";
 const Info = ({ info }) => {
   const router = useRouter(); //contains parameters that are
-  // the route.
-  const { id } = router.query;
+  // the route
   return (
     <>
       <CustomLayout>
-        <h1>{info.title}</h1>
-        <p>{info.description}</p>
-        <p>{info.ingredients}</p>
+        <p>
+          Your choosing:
+          {router.query.type}
+        </p>
       </CustomLayout>
     </>
   );
 };
-export const getServerSideProps = async (context) => {
+/* export const getServerSideProps = async (context) => {
   const res = await fetch(
     `https://api.sampleapis.com/coffee/hot/${context.params.id}`
   );
@@ -24,5 +25,5 @@ export const getServerSideProps = async (context) => {
       info,
     },
   };
-};
+}; */
 export default Info;
