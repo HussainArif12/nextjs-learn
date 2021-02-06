@@ -1,9 +1,11 @@
 import Link from "next/link";
+import styles from "../styles/Nav.module.css";
 function Nav() {
   return (
-    <div>
+    <div className={styles.card}>
+      <h3>Navigation</h3>
       <nav>
-        <ul>
+        <ul className={styles.list}>
           <li>
             <Link href="/">Home</Link>
           </li>

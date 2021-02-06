@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-const CoffeeComponent = ({ coffee }) => {
+const CoffeeComponent = ({ coffee, type }) => {
   return (
     <>
-      <Link href="/coffee/[id]" as={`/coffee/${coffee.id}`}>
-        <p>{coffee.title}</p>
+      <Link href={`/coffee/[type]/[id]`} as={`/coffee/${type}/${coffee.id}`}>
+        <a>{coffee.title}</a>
       </Link>
     </>
   );
