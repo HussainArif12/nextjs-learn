@@ -20,7 +20,7 @@ const Info = ({ info }) => {
     </>
   );
 };
-export const getServerSideProps = async (context) => {
+/* export const getServerSideProps = async (context) => {
   const res = await fetch(
     `https://api.sampleapis.com/coffee/${context.params.type}`
   );
@@ -29,6 +29,20 @@ export const getServerSideProps = async (context) => {
     props: {
       info,
     },
+  };
+}; */
+
+export const getStaticPaths = async () => {
+  const res = await fetch(
+    `https://api.sampleapis.com/coffee/${context.params.type}`
+  );
+  const info = await res.json();
+
+  const ids = info.map((item) => item.id);
+  const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+  return {
+    paths,
+    fallback: false,
   };
 };
 export default Info;

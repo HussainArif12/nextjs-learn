@@ -1,7 +1,6 @@
 import CustomLayout from "../components/layout";
 import Link from "next/link";
-export default function Home({ coffee }) {
-  //console.log(coffee);
+export default function Home() {
   return (
     <div>
       <CustomLayout>
