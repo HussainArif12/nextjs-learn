@@ -4,17 +4,21 @@ export default function Home({ info }) {
   return (
     <div>
       <CustomLayout>
-        <h1>List of coffees</h1>
-        <Link href="/coffee/hot">Hot coffees</Link>
-        <Link href="/coffee/iced">Iced coffees</Link>
+        <ul>
+          {info.map((item) => (
+            <div key={item.id}>
+              <Link href={`todo/${item.id}`}>
+                <a>{item.title}</a>
+              </Link>
+            </div>
+          ))}
+        </ul>
       </CustomLayout>
-      {info.title}
-      {info.description}
     </div>
   );
 }
 export const getStaticProps = async (context) => {
-  const res = await fetch(`https://api.sampleapis.com/coffee/hot/4`);
+  const res = await fetch(`https://jsonplaceholder.typicode.com/todos`);
   const info = await res.json();
   return {
     props: {
