@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Nav from "../../components/nav";
 import TodoComponent from "../../components/TodoComponent";
 function Todo({ info }) {
   const data = useRouter();
@@ -6,6 +7,7 @@ function Todo({ info }) {
   console.log(info);
   return (
     <div>
+      <Nav />
       <TodoComponent todo={info} />
     </div>
   );

@@ -1,8 +1,10 @@
 import CustomLayout from "../components/layout";
 import Link from "next/link";
+import Meta from "../components/Meta";
 export default function Home({ info }) {
   return (
     <div>
+      <Meta />
       <CustomLayout>
         <ul>
           {info.map((item) => (
